@@ -4,7 +4,6 @@ loginForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
-  console.dir(event.currentTarget);
   const {
     elements: { email, password },
   } = event.currentTarget;
