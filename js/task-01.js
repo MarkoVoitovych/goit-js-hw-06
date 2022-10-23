@@ -1,7 +1,7 @@
 function showAllCategoriesList(parentClass, childClass) {
-  const categoriesParent = document.querySelector(parentClass);
+  const categoriesParentElement = document.querySelector(parentClass);
   const categoriesList = Array.from(
-    categoriesParent.querySelectorAll(childClass),
+    categoriesParentElement.querySelectorAll(childClass),
   );
   console.log(`Number of categories: ${categoriesList.length}`);
   for (const category of categoriesList) {

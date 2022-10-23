@@ -13,14 +13,18 @@ const images = [
   },
 ];
 
-const parentItem = document.querySelector('.gallery');
+function makeGallery(imagesArray) {
+  const parentGalleryElement = document.querySelector('.gallery');
 
-parentItem.style.display = 'flex';
-parentItem.style.listStyle = 'none';
-parentItem.style.gap = '30px';
+  parentGalleryElement.style.display = 'flex';
+  parentGalleryElement.style.listStyle = 'none';
+  parentGalleryElement.style.gap = '30px';
 
-const galleryMarkup = images
-  .map(image => `<li><img src='${image.url}' alt='${image.alt}'></li>`)
-  .join('');
+  const galleryMarkup = imagesArray
+    .map(image => `<li><img src='${image.url}' alt='${image.alt}'></li>`)
+    .join('');
 
-parentItem.insertAdjacentHTML('afterbegin', galleryMarkup);
+  parentGalleryElement.insertAdjacentHTML('afterbegin', galleryMarkup);
+}
+
+makeGallery(images);
