@@ -3,11 +3,13 @@ const textInput = document.querySelector('#validation-input');
 let inputValue = '';
 
 textInput.addEventListener('input', event => {
+  textInput.classList.remove('invalid');
+  textInput.classList.remove('valid');
   inputValue = event.currentTarget.value;
 });
 
 textInput.addEventListener('blur', () => {
-  if (inputValue.length > textInput.dataset.length) {
+  if (+inputValue.length == +textInput.dataset.length) {
     textInput.classList.remove('invalid');
     textInput.classList.add('valid');
   } else {

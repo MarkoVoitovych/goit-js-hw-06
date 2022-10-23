@@ -17,11 +17,15 @@ function makeGallery(imagesArray) {
   const parentGalleryElement = document.querySelector('.gallery');
 
   parentGalleryElement.style.display = 'flex';
+  parentGalleryElement.style.flexDirection = 'column';
   parentGalleryElement.style.listStyle = 'none';
   parentGalleryElement.style.gap = '30px';
 
   const galleryMarkup = imagesArray
-    .map(image => `<li><img src='${image.url}' alt='${image.alt}'></li>`)
+    .map(
+      image =>
+        `<li><img src='${image.url}' alt='${image.alt}' width="450"></li>`,
+    )
     .join('');
 
   parentGalleryElement.insertAdjacentHTML('afterbegin', galleryMarkup);
