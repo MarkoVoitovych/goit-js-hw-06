@@ -3,8 +3,7 @@ const textInput = document.querySelector('#validation-input');
 let inputValue = '';
 
 textInput.addEventListener('input', event => {
-  textInput.classList.remove('invalid');
-  textInput.classList.remove('valid');
+  textInput.classList.remove('invalid', 'valid');
   inputValue = event.currentTarget.value;
 });
 
